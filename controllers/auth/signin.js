@@ -16,8 +16,8 @@ const signup = async (req, res) => {
   //   мы ждем выполнения этого кода и только после этого выподняем следующий код
   const passwordCompare = await bcrypt.compare(password, user.password);
   // const passwordCompare = bcrypt.compareSync(password, user.password);
-  if (!user || !passwordCompare) {
-    throw RequestError(401, "wrong email or password");
+  if (!user || !user.verify || !passwordCompare) {
+    throw RequestError(401, "wrong email or password or not verify");
   }
   // когда нужно вывести отдельно сообщение и на ошибочный email и на password
   // if (!user) {

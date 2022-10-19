@@ -1,5 +1,6 @@
 const RequestError = require("./RequestError");
 const ctrlWrapper = require("./ctrlWrapper");
 const handleErrors = require("./handleSchemaValidationErrors");
+const sendEmail = require("./sendEmail");
 
-module.exports = { RequestError, ctrlWrapper, handleErrors };
+module.exports = { RequestError, ctrlWrapper, handleErrors, sendEmail };
